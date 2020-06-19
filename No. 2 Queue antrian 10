@@ -1,0 +1,45 @@
+#include "stdio.h"
+int main() {
+printf(" Nama		: Tasya Nurul Annisa\n ");
+	printf("NPM		: 197006074 \n ");
+	printf("Kelompok	: 5 \n ");
+int queue[5];
+int depan = -1;
+int belakang = -1;
+int pilihan, data, i;
+do {
+printf("MENU\n");
+printf("1. TAMBAH\n2. HAPUS \n3. LIHAT\n4. KELUAR");
+printf("\nPilihan - "); scanf("%d", &pilihan);
+switch (pilihan) {
+case 1: //enqueue
+//apakah queue belum penuh?
+if (belakang < 4 )
+{
+printf("Data Masuk = "); scanf("%d", &data);
+queue[belakang+1] = data;
+belakang++;
+if (belakang == 0)
+depan = 0;
+}
+else
+printf("Queue penuh! In");
+break;
+
+case 2: //dequeue
+//apakah queue belum kosong?
+if (depan <= belakang) {
+printf("Data keluar - %d\n", queue[depan]);
+depan++;
+}
+else
+printf("Queue kosong!\n");
+break;
+case 3:
+for(i=belakang; i<=depan; i++)
+printf("%d ", queue[5]);
+printf("\n");
+break;
+}
+} while (pilihan != 4);
+}
